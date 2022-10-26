@@ -24,18 +24,12 @@ public class ApiController {
     }
 
     @GetMapping("/login")
-    public LoginResponse login(@RequestBody LoginRequest loginRequest){
+    public LoginResponse login(){
 
         LoginResponse loginResponse = new LoginResponse();
 
-        if(loginRequest.getUser().equals("user123") && loginRequest.getPassword().equals("123123")) {
             loginResponse.setMsg("Login correcto.");
             loginResponse.setToken("123XC90123MXV901NV0");
-        }
-        else {
-            loginResponse.setMsg("Login fallido.");
-            loginResponse.setToken(null);
-        }
 
         return loginResponse;
     }
